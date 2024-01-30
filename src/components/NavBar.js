@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './NavBar.css';
+import { Button } from './Button';
 
 //imports for font awesome
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -11,8 +13,25 @@ import { faBars, faTimes, faShieldHalved } from "@fortawesome/free-solid-svg-ico
 
 function Navbar() {
     const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);
+
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+
+    const showButton = () => {
+        if(window.innerWidth <= 960){
+            setButton(false);
+        }
+        else{
+            setButton(true);
+        }
+    };
+
+    useEffect(() => {
+        showButton();
+      }, []);
+
+    window.addEventListener('resize', showButton);
 
     return (
         <>
@@ -23,7 +42,7 @@ function Navbar() {
                         <span style={{ marginLeft: '5px'}}>
                             <strong>Uchida</strong>
                         </span>
-                        <span style={{ marginLeft: '5px'}}>
+                        <span style={{ marginLeft: 'center'}}>
                             <FontAwesomeIcon icon={faShieldHalved}/>
                         </span>                        
                     </Link>
@@ -52,6 +71,7 @@ function Navbar() {
                             </Link>
                         </li>
                     </ul>
+                    {button && <Button buttonStyle='btn--outline'>GET STARTED</Button>}
                 </div>
             </nav>
         </>
