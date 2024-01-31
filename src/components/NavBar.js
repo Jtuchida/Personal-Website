@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { Button } from './Button';
@@ -14,8 +14,8 @@ import { faBars, faTimes, faShieldHalved,faBug } from "@fortawesome/free-solid-s
 function Navbar() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
-
-    const handleClick = () => setClick(!click);
+      
+    const handleClick = () => setClick(!click);    
     const closeMobileMenu = () => setClick(false);
 
     const showButton = () => {
@@ -30,7 +30,7 @@ function Navbar() {
     useEffect(() => {
         showButton();
       }, []);
-
+    
     window.addEventListener('resize', showButton);
 
     return (
@@ -38,17 +38,17 @@ function Navbar() {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-name'>
-                        <FontAwesomeIcon icon={faBug} /> 
                         <span className='first-name' style={{ fontFamily: 'Roboto', fontWeight: 300 }} onClick={closeMobileMenu}>
                             Joseph</span>
                         <span style={{ marginLeft: '2px' }}>
                             Uchida
-                        </span> 
-                        <FontAwesomeIcon icon={faShieldHalved} />                     
+                        </span>                     
                     </Link>
-                    <div className='menu-icon'onClick={handleClick}>
-                        <FontAwesomeIcon icon={click ? faTimes: faBars} />
-                    </div>
+                    <Link>
+                        <div className='menu-icon' onClick={handleClick}>
+                            <FontAwesomeIcon icon={click ? faTimes : faBars} />
+                        </div>
+                    </Link>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
@@ -75,9 +75,39 @@ function Navbar() {
                     {button && <Button buttonStyle='btn--outline'>FEEDBACK</Button>}
                 </div>
             </nav>
+            {click ? 'nav-menu active' : 'nav-menu-popout' && <PopoutMenu closeMobileMenu={closeMobileMenu}/>}
+
         </>
     );
 }
 
+function PopoutMenu({ closeMobileMenu }) {
+    return (
+      <ul className='nav-menu-popout'>
+        <li className='nav-item'>
+          <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            Home
+          </Link>
+        </li>
+        <li className='nav-item'>
+          <Link to='/blog' className='nav-links' onClick={closeMobileMenu}>
+            Blog
+          </Link>
+        </li>
+        <li className='nav-item'>
+          <Link to='/about' className='nav-links' onClick={closeMobileMenu}>
+            About
+          </Link>
+        </li>
+        <li className='nav-item'>
+          <Link to='/references' className='nav-links' onClick={closeMobileMenu}>
+            References
+          </Link>
+        </li>
+      </ul>
+    );
+}
+    
 
-export default Navbar;
+
+export default Navbar; 
