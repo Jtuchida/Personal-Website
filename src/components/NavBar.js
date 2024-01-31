@@ -38,13 +38,11 @@ function Navbar() {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-name'>
-                        <FontAwesomeIcon icon={faBug} /> 
                         <span className='first-name' style={{ fontFamily: 'Roboto', fontWeight: 300 }} onClick={closeMobileMenu}>
                             Joseph</span>
                         <span style={{ marginLeft: '2px' }}>
                             Uchida
-                        </span> 
-                        <FontAwesomeIcon icon={faShieldHalved} />                     
+                        </span>                     
                     </Link>
                     <div className='menu-icon'onClick={handleClick}>
                         <FontAwesomeIcon icon={click ? faTimes: faBars} />
