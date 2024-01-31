@@ -8,7 +8,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //specific icons
-import { faBars, faTimes, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes, faShieldHalved,faBug } from "@fortawesome/free-solid-svg-icons";
 
 
 function Navbar() {
@@ -37,14 +37,14 @@ function Navbar() {
         <>
             <nav className='navbar'>
                 <div className='navbar-container'>
-                    <Link to='/' className='navbar-logo'>
-                        Joseph {' '}
-                        <span style={{ marginLeft: '5px'}}>
-                            <strong>Uchida</strong>
-                        </span>
-                        <span style={{ marginLeft: 'center'}}>
-                            <FontAwesomeIcon icon={faShieldHalved}/>
-                        </span>                        
+                    <Link to='/' className='navbar-name'>
+                        <FontAwesomeIcon icon={faBug} /> 
+                        <span className='first-name' style={{ fontFamily: 'Roboto', fontWeight: 300 }} onClick={closeMobileMenu}>
+                            Joseph</span>
+                        <span style={{ marginLeft: '2px' }}>
+                            Uchida
+                        </span> 
+                        <FontAwesomeIcon icon={faShieldHalved} />                     
                     </Link>
                     <div className='menu-icon'onClick={handleClick}>
                         <FontAwesomeIcon icon={click ? faTimes: faBars} />
@@ -56,22 +56,23 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/Blog' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                 Blog
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/About' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                 About
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/getting-started' className='nav-links' onClick={closeMobileMenu}>
-                                Get-Started
+                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                                References
                             </Link>
+                           
                         </li>
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>GET STARTED</Button>}
+                    {button && <Button buttonStyle='btn--outline'>FEEDBACK</Button>}
                 </div>
             </nav>
         </>
