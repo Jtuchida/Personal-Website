@@ -8,7 +8,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //specific icons
-import { faBars, faTimes, faShieldHalved,faBug } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
 
 
 function Navbar() {
@@ -39,7 +39,8 @@ function Navbar() {
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-name'>
                         <span className='first-name' style={{ fontFamily: 'Roboto', fontWeight: 300 }} onClick={closeMobileMenu}>
-                            Joseph</span>
+                            Joseph
+                        </span>
                         <span style={{ marginLeft: '2px' }}>
                             Uchida
                         </span>                     
@@ -66,8 +67,7 @@ function Navbar() {
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                 References
-                            </Link>
-                           
+                            </Link> 
                         </li>
                     </ul>
                     {button && <Button buttonStyle='btn--outline'>FEEDBACK</Button>}
