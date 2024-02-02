@@ -1,22 +1,23 @@
-#My Personal Website
+# My Personal Website
 Overview
-This a full-stack web application that integrates frontend and backend components to deliver a dynamic and responsive user interface. This project leverages the power of Node.js, a React Framework, and Firebase to provide a robust and efficient solution for your web development needs.
+This a full-stack web application that integrates frontend and backend components to deliver a dynamic and responsive user interface. This project leverages the power of Node.js, a React Framework, and Firebase to provide a learning experience for me while allowing for background on who I am and what I do to be presented.
 
-#Features
+# Features
 Full-Stack Development: The project encompasses both frontend and backend development, ensuring a comprehensive and cohesive application.
 
-#Node.js Backend:
+# Node.js Backend:
 The backend is powered by Node.js, offering a scalable and efficient server-side environment.
 
-#React Framework:
-The frontend is built using React, a popular JavaScript library for building user interfaces. This ensures a modular and maintainable codebase.
+# React Framework:
+The front end is built using React, a popular JavaScript library for building user interfaces. This ensures a modular and maintainable codebase.
 
-#Firebase Integration:
+# Firebase Integration:
 Firebase is seamlessly integrated into the project, providing a reliable backend-as-a-service (BaaS) solution. This includes real-time database capabilities, authentication, and more.
 
-Dynamic and Responsive UI: The application focuses on delivering a user-friendly experience by creating a dynamic and responsive user interface.
+# Dynamic and Responsive UI:
+The application focuses on delivering a user-friendly experience by creating a dynamic and responsive user interface. 
 
-#Tech Stack
+# Tech Stack
 Frontend: React Framework
 Backend: Node.js
 Database: Firebase Realtime Database
